@@ -163,3 +163,4 @@ vercel
 ## 🔬 Scientific Disclaimer
 
 Recommendations provided by AgriAssist AI are generated through multimodal agronomic intelligence models trained on agriscience literature. Crop managers, farmers, and extension specialists should always inspect local field conditions and adhere to national pesticide registration labels, protective equipment guidelines, and regulated application rates.
+
