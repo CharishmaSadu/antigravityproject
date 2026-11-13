@@ -156,9 +156,10 @@ export async function initDb() {
     }
 
     try {
+      const isSupabase = dbUrl.includes('supabase.com') || dbUrl.includes('supabase.co');
       pool = new Pool({
         connectionString: dbUrl,
-        ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+        ssl: (process.env.NODE_ENV === 'production' || isSupabase) ? { rejectUnauthorized: false } : false,
         connectionTimeoutMillis: 5000
       });
 

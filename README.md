@@ -99,15 +99,43 @@ Copy `.env.example` to `.env`:
 ```bash
 cp .env.example .env
 ```
-Populate your environment variables:
+Populate your environment variables (see `.env.example` for detailed guidelines):
 ```env
 PORT=5000
-DATABASE_URL=postgresql://user:password@localhost:5432/agriassist
-GEMINI_API_KEY=your_google_gemini_api_key_here
 NODE_ENV=development
+GEMINI_API_KEY=your_google_gemini_api_key_here
+
+# Supabase Connection Pooler (Transaction Mode, Port 6543)
+DATABASE_URL=postgresql://postgres.[YOUR-PROJECT-REF]:[YOUR-PASSWORD]@aws-0-[YOUR-REGION].pooler.supabase.com:6543/postgres?pgbouncer=true
+
+# Optional Supabase API keys
+SUPABASE_URL=https://[YOUR-PROJECT-REF].supabase.co
+SUPABASE_ANON_KEY=your_supabase_anon_key_here
 ```
-> *Note: If `DATABASE_URL` is omitted or uninitialized, AgriAssist AI automatically uses its resilient embedded fallback so you can test all features immediately.*
+> *Note: If `DATABASE_URL` is omitted, AgriAssist AI automatically uses its resilient embedded fallback so you can test all features immediately.*
 > *If `GEMINI_API_KEY` is not set, AgriAssist AI activates its built-in Expert Agronomic Knowledge Base with validated real-world crop pathologies.*
+
+---
+
+## ⚡ Supabase Setup & Migrations
+
+AgriAssist AI is optimized for **Supabase PostgreSQL** with automated connection pooling and Row-Level Security (RLS).
+
+### Option 1: Apply via Supabase Dashboard SQL Editor (Quickest)
+1. Open your Supabase Project: **SQL Editor** -> **New query**.
+2. Copy the contents of [`supabase/migrations/20261113000000_create_farms_and_advisories.sql`](file:///c:/Project/supabase/migrations/20261113000000_create_farms_and_advisories.sql).
+3. Click **Run**.
+4. *(Optional)* Run [`supabase/seed.sql`](file:///c:/Project/supabase/seed.sql) to populate demo farm and advisory records.
+
+### Option 2: Apply via Supabase CLI
+```bash
+supabase db push
+# or to reset and seed
+supabase db reset
+```
+
+### Option 3: Auto-Migration on Boot
+When `DATABASE_URL` is configured, AgriAssist AI's database service automatically verifies the connection and runs migrations from `server/migrate.sql` upon server startup!
 
 ### 4. Running the Development Servers
 Run both backend Express server and Vite React frontend concurrently:
