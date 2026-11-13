@@ -3,6 +3,7 @@ import multer from 'multer';
 import { db } from '../db.js';
 import { generateCropAdvisory } from '../services/gemini.js';
 import { advisorySubmissionSchema } from '../validators/index.js';
+import { uploadCropImage } from '../services/supabase.js';
 
 const router = Router();
 
@@ -93,11 +94,14 @@ router.post('/', upload.single('image'), async (req, res, next) => {
       }
     }
 
-    // Process image data URL for visualization in results
+    // Process image: Upload to Supabase Storage if configured, else fallback to data URL
     let imageUrl = null;
     if (req.file) {
-      const base64 = req.file.buffer.toString('base64');
-      imageUrl = `data:${req.file.mimetype};base64,${base64}`;
+      imageUrl = await uploadCropImage(req.file.buffer, req.file.originalname, req.file.mimetype);
+      if (!imageUrl) {
+        const base64 = req.file.buffer.toString('base64');
+        imageUrl = `data:${req.file.mimetype};base64,${base64}`;
+      }
     }
 
     // Call Gemini 2.5 Flash / Agronomic Service

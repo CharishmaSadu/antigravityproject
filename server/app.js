@@ -5,6 +5,7 @@ import farmsRouter from './routes/farms.js';
 import advisoriesRouter from './routes/advisories.js';
 import { getAgroWeather, calculateYieldForecast } from './services/weather.js';
 import { db, initDb } from './db.js';
+import { isSupabaseConfigured } from './services/supabase.js';
 
 dotenv.config();
 
@@ -30,6 +31,8 @@ app.get(['/api/health', '/health'], (req, res) => {
     status: 'healthy',
     timestamp: new Date().toISOString(),
     database: db.isPostgres() ? 'PostgreSQL (Connected)' : 'Embedded Store (Resilient Fallback)',
+    isSupabasePg: Boolean(process.env.DATABASE_URL && (process.env.DATABASE_URL.includes('supabase.com') || process.env.DATABASE_URL.includes('supabase.co'))),
+    supabaseClientConfigured: isSupabaseConfigured(),
     geminiSdkConfigured: hasGeminiKey,
     model: 'gemini-2.5-flash',
     version: '1.0.0'
