@@ -1,0 +1,164 @@
+{
+  "farms": [
+    {
+      "id": "5aaffcea-6797-4151-98a6-ff436db0edec",
+      "user_id": "farmer-demo-user",
+      "farm_name": "Emerald Valley Test Ranch",
+      "location_region": "Yakima Valley, Washington",
+      "soil_type": "Loam",
+      "soil_ph": 6.4,
+      "total_area_acres": 120,
+      "irrigation_type": "Drip",
+      "primary_crops": [
+        "Tomato",
+        "Corn",
+        "Apple"
+      ],
+      "created_at": "2026-11-13T08:14:30.289Z",
+      "updated_at": "2026-11-13T08:14:30.289Z"
+    },
+    {
+      "id": "f1a9b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+      "user_id": "farmer-demo-user",
+      "farm_name": "Verdant Valley Agro Estate",
+      "location_region": "Central Valley, California",
+      "soil_type": "Loam",
+      "soil_ph": 6.8,
+      "total_area_acres": 45.5,
+      "irrigation_type": "Drip",
+      "primary_crops": [
+        "Tomato",
+        "Corn",
+        "Soybeans"
+      ],
+      "created_at": "2026-11-06T08:13:22.332Z",
+      "updated_at": "2026-11-06T08:13:22.333Z"
+    },
+    {
+      "id": "f2b8c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "user_id": "farmer-demo-user",
+      "farm_name": "Highland Organic Orchards",
+      "location_region": "Willamette Valley, Oregon",
+      "soil_type": "Silt",
+      "soil_ph": 6.2,
+      "total_area_acres": 28,
+      "irrigation_type": "Sprinkler",
+      "primary_crops": [
+        "Potato",
+        "Onion",
+        "Wheat"
+      ],
+      "created_at": "2026-10-30T08:13:22.333Z",
+      "updated_at": "2026-10-30T08:13:22.333Z"
+    }
+  ],
+  "advisories": [
+    {
+      "id": "401cd2fb-1b00-4b97-84f7-40a4a759b7cc",
+      "farm_id": "5aaffcea-6797-4151-98a6-ff436db0edec",
+      "user_id": "farmer-demo-user",
+      "crop_name": "Tomato",
+      "symptom_description": "Lower leaves turning yellow with dark target spots spreading rapidly",
+      "image_url": null,
+      "diagnosis_title": "Tomato - Early Blight (Alternaria solani) with Secondary Foliar Necrosis",
+      "confidence_score": 93,
+      "severity_level": "High",
+      "issue_category": "Fungal",
+      "organic_remedies": [
+        {
+          "treatmentName": "Bacillus subtilis Bio-fungicide (Strain QST 713)",
+          "applicationMethod": "High-pressure canopy spray ensuring undersides of lower foliage are drenched",
+          "dosageOrRate": "2 to 4 quarts per 100 gallons per acre every 7 days"
+        },
+        {
+          "treatmentName": "Fixed Copper Soap (Copper Octanoate)",
+          "applicationMethod": "Foliar application at canopy level under low UV conditions",
+          "dosageOrRate": "1.5 fl oz per gallon of water"
+        }
+      ],
+      "chemical_treatments": [
+        {
+          "activeIngredient": "Azoxystrobin + Difenoconazole",
+          "tradeNameExample": "Quadris Top SC",
+          "safetyPrecautions": "14-day pre-harvest interval; rotate FRAC mode-of-action groups 11 and 3 to hinder resistance",
+          "applicationRate": "8.0 to 14.0 fl oz per acre"
+        },
+        {
+          "activeIngredient": "Chlorothalonil",
+          "tradeNameExample": "Bravo Weather Stik",
+          "safetyPrecautions": "Multi-site contact protectant; apply before spore germination events",
+          "applicationRate": "1.5 to 2.0 pints per acre"
+        }
+      ],
+      "preventative_measures": [
+        "Strip bottom 12-16 inches of lateral leaves to eliminate ground splash",
+        "Enforce drip irrigation; eliminate all overhead watering after transplant establishment",
+        "Sterilize pruning shears with 10% bleach between field rows",
+        "Maintain 3-year Solanaceae crop rotation schedule"
+      ],
+      "fertilizer_recommendation": {
+        "primaryNutrientFocus": "Potassium foliar boost and bio-silicon to fortify parenchymal cell walls",
+        "recommendedNPK": "NPK 12-12-36 with 2% Magnesium Oxide",
+        "applicationTiming": "Weekly fertigation through drip irrigation line"
+      },
+      "estimated_yield_impact": "Significant: 25-35% harvest loss if defoliation reaches upper flowering cluster.",
+      "raw_ai_response": {
+        "source": "expert_knowledge_engine",
+        "warning": null
+      },
+      "created_at": "2026-11-13T08:14:30.438Z"
+    },
+    {
+      "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+      "farm_id": "f1a9b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+      "user_id": "farmer-demo-user",
+      "crop_name": "Tomato",
+      "symptom_description": "Dark concentric target-shaped spots with chlorotic yellow halos on lower older leaves. Marginal foliar necrosis spreading upwards.",
+      "image_url": "https://images.unsplash.com/photo-1592417817098-8f3d69106093?auto=format&fit=crop&w=600&q=80",
+      "diagnosis_title": "Early Blight (Alternaria solani)",
+      "confidence_score": 94,
+      "severity_level": "Moderate",
+      "issue_category": "Fungal",
+      "organic_remedies": [
+        {
+          "treatmentName": "Bio-Fungicide Bacillus subtilis (Serenade ASO)",
+          "applicationMethod": "Foliar spray with thorough coverage on both leaf undersides and canopies",
+          "dosageOrRate": "2 to 4 quarts per 100 gallons water every 7-10 days"
+        },
+        {
+          "treatmentName": "Copper Octanoate (Copper Soap)",
+          "applicationMethod": "Foliar application at dawn or late dusk to prevent phytotoxicity",
+          "dosageOrRate": "1.5 to 2.0 fluid ounces per gallon of water"
+        }
+      ],
+      "chemicalTreatments": [
+        {
+          "activeIngredient": "Azoxystrobin + Difenoconazole",
+          "tradeNameExample": "Quadris Top / Amistar Top",
+          "safetyPrecautions": "Wear PPE, observe 14-day pre-harvest interval (PHI), avoid aquatic runoff",
+          "applicationRate": "8 to 14 fl oz/acre"
+        },
+        {
+          "activeIngredient": "Chlorothalonil",
+          "tradeNameExample": "Bravo Weather Stik",
+          "safetyPrecautions": "Contact protectant; 7-day reentry interval in dense foliage",
+          "applicationRate": "1.5 to 2.0 pints/acre"
+        }
+      ],
+      "preventativeMeasures": [
+        "Prune lower 12 inches of infected leaves to enhance ventilation and diminish soil splash-up",
+        "Switch strictly to drip irrigation rather than overhead sprinklers to minimize leaf moisture duration",
+        "Apply organic straw mulch around plant bases to seal fungal spores in soil",
+        "Practice a minimum 3-year crop rotation out of the Solanaceae family"
+      ],
+      "fertilizerRecommendation": {
+        "primaryNutrientFocus": "Potassium and Silica foliar fortification to thicken leaf epidermal cell walls",
+        "recommendedNPK": "NPK 8-16-36 during fruiting; avoid excess quick-release nitrogen",
+        "applicationTiming": "Split fertigation through drip weekly"
+      },
+      "estimatedYieldImpact": "Manageable: 5-10% potential loss if controlled within 7 days; up to 40% if untreated.",
+      "raw_ai_response": null,
+      "created_at": "2026-11-11T20:13:22.333Z"
+    }
+  ]
+}
